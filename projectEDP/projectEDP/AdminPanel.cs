@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace projectEDP
 {
-    public partial class AdminForm : Form
+    public partial class AdminPanel : Form
     {
-        public AdminForm()
+        public AdminPanel()
         {
             InitializeComponent();
         }

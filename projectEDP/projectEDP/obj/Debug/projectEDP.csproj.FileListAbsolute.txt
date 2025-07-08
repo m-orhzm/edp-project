@@ -26,7 +26,6 @@ C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\bin\Debug\proje
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\bin\Debug\projectEDP.pdb
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.csproj.AssemblyReference.cache
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.exe.config
-C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.Form1.resources
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.Properties.Resources.resources
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.csproj.GenerateResource.cache
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.csproj.CoreCompileInputs.cache
@@ -46,3 +45,8 @@ C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\obj\Debug\proje
 C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\obj\Debug\projectEDP.csproj.CoreCompileInputs.cache
 C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\obj\Debug\projectEDP.exe
 C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\obj\Debug\projectEDP.pdb
+C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.FormSign_Up.resources
+C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.History.resources
+C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.AdminPanel.resources
+C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.Homepage.resources
+C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.LoginForm.resources

@@ -22,5 +22,13 @@ namespace projectEDP
             new History().Show();
             this.Hide();
         }
+
+        private void bttnDiscount_Click(object sender, EventArgs e)
+        {
+            DiscountForm discountForm = new DiscountForm(); 
+            discountForm.Show();
+
+            this.Hide();
+        }
     }
 }

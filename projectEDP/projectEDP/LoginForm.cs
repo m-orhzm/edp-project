@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace projectEDP
 {
@@ -32,18 +33,44 @@ namespace projectEDP
             string username = txtBoxUsername.Text;
             string password = txtBoxPassword.Text;
 
-            if (username == UserData.RegisteredUsername && password == UserData.RegisteredPassword)
+            try
             {
-                MessageBox.Show("Login Successful! Welcome");
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\USER\SOURCE\REPOS\EDP-PROJECT.GIT\PROJECTEDP\PROJECTEDP\EDP_DATABASE.mdf;Integrated Security=True";
 
-                Homepage homepageForm = new Homepage();
-                homepageForm.Show();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
 
-                this.Hide();
+                    string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@Password", password);
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Login Successful! Welcome");
+
+                            Homepage homepageForm = new Homepage();
+                            homepageForm.Show();
+
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid username or password. Please try again.");
+                        }
+                    }
+
+                    conn.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid username or password. Please try again.");
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -69,6 +96,8 @@ namespace projectEDP
         {
             FormSign_Up formSignUp = new FormSign_Up();
             formSignUp.Show();
+
+            this.Hide();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

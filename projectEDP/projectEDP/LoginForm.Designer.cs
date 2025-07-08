@@ -49,7 +49,7 @@
             // 
             this.lblAurora.AutoSize = true;
             this.lblAurora.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAurora.Location = new System.Drawing.Point(52, 55);
+            this.lblAurora.Location = new System.Drawing.Point(30, 45);
             this.lblAurora.Name = "lblAurora";
             this.lblAurora.Size = new System.Drawing.Size(318, 24);
             this.lblAurora.TabIndex = 3;
@@ -60,7 +60,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(126, 19);
+            this.lblWelcome.Location = new System.Drawing.Point(104, 9);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(173, 24);
             this.lblWelcome.TabIndex = 2;
@@ -166,7 +166,7 @@
             // 
             this.chcBoxPass.AutoSize = true;
             this.chcBoxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chcBoxPass.Location = new System.Drawing.Point(224, 245);
+            this.chcBoxPass.Location = new System.Drawing.Point(206, 245);
             this.chcBoxPass.Name = "chcBoxPass";
             this.chcBoxPass.Size = new System.Drawing.Size(164, 24);
             this.chcBoxPass.TabIndex = 14;

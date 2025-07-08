@@ -50,3 +50,4 @@ C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\proje
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.AdminPanel.resources
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.Homepage.resources
 C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.LoginForm.resources
+C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.AdminHistory.resources

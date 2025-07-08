@@ -124,6 +124,7 @@
             this.bttnHistory.TabIndex = 14;
             this.bttnHistory.Text = "HISTORY";
             this.bttnHistory.UseVisualStyleBackColor = true;
+            this.bttnHistory.Click += new System.EventHandler(this.bttnHistory_Click);
             // 
             // bttnPay
             // 

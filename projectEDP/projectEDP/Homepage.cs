@@ -16,5 +16,11 @@ namespace projectEDP
         {
             InitializeComponent();
         }
+
+        private void bttnHistory_Click(object sender, EventArgs e)
+        {
+            new History().Show();
+            this.Hide();
+        }
     }
 }

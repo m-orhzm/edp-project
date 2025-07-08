@@ -19,7 +19,8 @@ namespace projectEDP
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            new AdminHistory().Show();
+            this.Hide();
         }
     }
 }

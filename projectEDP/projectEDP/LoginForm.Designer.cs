@@ -40,6 +40,7 @@
             this.bttnLogin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chcBoxPass = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +72,7 @@
             this.txtBoxPassword.Location = new System.Drawing.Point(161, 189);
             this.txtBoxPassword.Multiline = true;
             this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.PasswordChar = '*';
             this.txtBoxPassword.Size = new System.Drawing.Size(187, 36);
             this.txtBoxPassword.TabIndex = 9;
             // 
@@ -107,7 +109,7 @@
             this.lblSignUp.AutoSize = true;
             this.lblSignUp.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblSignUp.Location = new System.Drawing.Point(166, 329);
+            this.lblSignUp.Location = new System.Drawing.Point(157, 380);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(111, 24);
             this.lblSignUp.TabIndex = 12;
@@ -119,7 +121,7 @@
             this.bttnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.bttnAdmin.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnAdmin.ForeColor = System.Drawing.Color.Black;
-            this.bttnAdmin.Location = new System.Drawing.Point(233, 276);
+            this.bttnAdmin.Location = new System.Drawing.Point(224, 327);
             this.bttnAdmin.Name = "bttnAdmin";
             this.bttnAdmin.Size = new System.Drawing.Size(124, 34);
             this.bttnAdmin.TabIndex = 11;
@@ -132,7 +134,7 @@
             this.bttnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.bttnLogin.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnLogin.ForeColor = System.Drawing.Color.Black;
-            this.bttnLogin.Location = new System.Drawing.Point(74, 276);
+            this.bttnLogin.Location = new System.Drawing.Point(65, 327);
             this.bttnLogin.Name = "bttnLogin";
             this.bttnLogin.Size = new System.Drawing.Size(123, 34);
             this.bttnLogin.TabIndex = 10;
@@ -160,11 +162,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // chcBoxPass
+            // 
+            this.chcBoxPass.AutoSize = true;
+            this.chcBoxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chcBoxPass.Location = new System.Drawing.Point(224, 245);
+            this.chcBoxPass.Name = "chcBoxPass";
+            this.chcBoxPass.Size = new System.Drawing.Size(164, 24);
+            this.chcBoxPass.TabIndex = 14;
+            this.chcBoxPass.Text = "Show Password";
+            this.chcBoxPass.UseVisualStyleBackColor = true;
+            this.chcBoxPass.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chcBoxPass);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.bttnAdmin);
@@ -197,5 +212,6 @@
         private System.Windows.Forms.Button bttnLogin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox chcBoxPass;
     }
 }

@@ -34,16 +34,28 @@ namespace projectEDP
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(email))
+            //if (string.IsNullOrWhiteSpace(email))
+            //{
+            //    MessageBox.Show("Email field is required");
+            //    return;
+            //}
+
+            if (!email.Contains("@") || !email.Contains("."))
             {
-                MessageBox.Show("Email field is required");
+                MessageBox.Show("Please enter a valid email address.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(phone))
+
+            //if (string.IsNullOrWhiteSpace(phone))
+            //{
+            //    MessageBox.Show("Phone field is required");
+            //    return;
+            //}
+
+            if (!phone.All(char.IsDigit) || phone.Length < 10)
             {
-                MessageBox.Show("Phone field is required");
-                return;
+                MessageBox.Show("Please insert 10 digit for number. THANK YOU!!");
             }
 
             if (string.IsNullOrWhiteSpace(DOB))
@@ -96,6 +108,10 @@ namespace projectEDP
             this.Close();
         }
 
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

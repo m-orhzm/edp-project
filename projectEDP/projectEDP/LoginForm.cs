@@ -70,6 +70,22 @@ namespace projectEDP
             FormSign_Up formSignUp = new FormSign_Up();
             formSignUp.Show();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chcBoxPass.Checked == true)
+            {
+                txtBoxPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtBoxPassword.UseSystemPasswordChar = true;
+
+            }
+
+
+        }
     }
 }
+
 

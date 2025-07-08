@@ -217,6 +217,7 @@
             this.lblRegister.Size = new System.Drawing.Size(287, 29);
             this.lblRegister.TabIndex = 22;
             this.lblRegister.Text = "REGISTRATION FORM";
+            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click);
             // 
             // FormSign_Up
             // 

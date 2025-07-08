@@ -29,24 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
-            this.button7 = new System.Windows.Forms.Button();
+            this.history = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button7
+            // history
             // 
-            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(568, 32);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(168, 39);
-            this.button7.TabIndex = 47;
-            this.button7.Text = "HISTORY";
-            this.button7.UseVisualStyleBackColor = true;
+            this.history.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.history.Location = new System.Drawing.Point(851, 32);
+            this.history.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.history.Name = "history";
+            this.history.Size = new System.Drawing.Size(168, 39);
+            this.history.TabIndex = 47;
+            this.history.Text = "HISTORY";
+            this.history.UseVisualStyleBackColor = true;
+            this.history.Click += new System.EventHandler(this.button7_Click);
             // 
             // label1
             // 
@@ -73,7 +76,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(355, 32);
+            this.button6.Location = new System.Drawing.Point(638, 32);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(207, 39);
@@ -91,13 +94,24 @@
             this.label2.TabIndex = 50;
             this.label2.Text = "~ Admin Panel";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(448, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(760, 454);
+            this.dataGridView1.TabIndex = 51;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 554);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.history);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -105,16 +119,18 @@
             this.Name = "AdminPanel";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button history;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

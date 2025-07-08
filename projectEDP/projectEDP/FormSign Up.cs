@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace projectEDP
 {
@@ -100,17 +101,54 @@ namespace projectEDP
                 return;
             }
 
-            // Save to DataStorage.cs
-            UserData.RegisteredUsername = username;
-            UserData.RegisteredPassword = password;
+            try
+            {
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\USER\SOURCE\REPOS\EDP-PROJECT.GIT\PROJECTEDP\PROJECTEDP\EDP_DATABASE.mdf;Integrated Security=True";
 
-            MessageBox.Show("You successfully registered. THANK YOU");
-            this.Close();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = "INSERT INTO Users (Name, Email, Phone, DOB, Gender, Username, Password) " +
+                                   "VALUES (@Name, @Email, @Phone, @DOB, @Gender, @Username, @Password)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", name);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Phone", phone);
+                        cmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(DOB));
+                        cmd.Parameters.AddWithValue("@Gender", gender);
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@Password", password);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
+                }
+
+                MessageBox.Show("You successfully registered. THANK YOU");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
         }
 
         private void lblRegister_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();  
+            loginForm.Show(); 
+
+            this.Hide();
         }
     }
 }

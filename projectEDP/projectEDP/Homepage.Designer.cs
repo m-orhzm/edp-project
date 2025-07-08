@@ -155,6 +155,7 @@
             this.bttnDiscount.TabIndex = 11;
             this.bttnDiscount.Text = "DISCOUNT";
             this.bttnDiscount.UseVisualStyleBackColor = true;
+            this.bttnDiscount.Click += new System.EventHandler(this.bttnDiscount_Click);
             // 
             // Homepage
             // 

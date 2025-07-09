@@ -104,11 +104,12 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.SystemColors.Control;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(226, 315);
+            this.label27.Location = new System.Drawing.Point(321, 312);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(371, 23);
             this.label27.TabIndex = 54;
             this.label27.Text = "Search (Booking ID, Cust. Name or Destination)";
+
             // 
             // label1
             // 

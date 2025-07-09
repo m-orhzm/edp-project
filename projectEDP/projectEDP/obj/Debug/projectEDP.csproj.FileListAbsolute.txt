@@ -55,5 +55,4 @@ C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\obj\Debug\proje
 C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\bin\Debug\EDP_Database.mdf
 C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\bin\Debug\EDP_Database_log.ldf
 C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\obj\Debug\projectEDP.DiscountForm.resources
-C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.AdminDiscount.resources
-C:\Users\User\Documents\GitHub\edp-project\projectEDP\projectEDP\obj\Debug\projectEDP.DiscountForm.resources
+C:\Users\USER\Source\Repos\edp-project.git\projectEDP\projectEDP\obj\Debug\projectEDP.AdminDiscount.resources

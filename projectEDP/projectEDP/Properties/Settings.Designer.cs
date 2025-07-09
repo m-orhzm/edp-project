@@ -25,12 +25,21 @@ namespace projectEDP.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EDP_Database." +
-            "mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\n\t\t\t\t\tData Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Database_edp;Integrated" +
+            " Security=True;Encrypt=False;TrustServerCertificate=True;\r\n\t\t\t\t")]
         public string EDP_DatabaseConnectionString {
             get {
                 return ((string)(this["EDP_DatabaseConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Database_edp;Integrated Securi" +
+            "ty=True;Encrypt=False;TrustServerCertificate=True;\r\n")]
+        public string Database_edpConnectionString {
+            get {
+                return ((string)(this["Database_edpConnectionString"]));
             }
         }
     }

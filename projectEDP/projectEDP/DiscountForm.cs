@@ -1,40 +1,53 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace projectEDP
 {
     public partial class DiscountForm : Form
     {
+        private DataGridView dataGridView1;
+
         public DiscountForm()
         {
             InitializeComponent();
+            InitializeCustomComponents(); // panggil method manual
+        }
+
+        private void InitializeCustomComponents()
+        {
+            this.dataGridView1 = new DataGridView();
+            this.dataGridView1.Dock = DockStyle.Fill;
+            this.Controls.Add(this.dataGridView1);
+            this.Load += new EventHandler(DiscountForm_Load); // trigger load form
         }
 
         private void DiscountForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'eDP_DatabaseDataSet1.Discount' table. You can move, or remove it, as needed.
-            this.discountTableAdapter.Fill(this.eDP_DatabaseDataSet.Discount);
+            string connStr = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Database_edp;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;";
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Discount", conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
 
         private void bttnBack_Click(object sender, EventArgs e)
         {
-            Homepage homepage = new Homepage();
+            Homepage homepage = new Homepage(); 
             homepage.Show();
-
-            this.Hide();
         }
     }
 }

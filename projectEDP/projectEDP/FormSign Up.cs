@@ -103,7 +103,7 @@ namespace projectEDP
 
             try
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\USER\SOURCE\REPOS\EDP-PROJECT.GIT\PROJECTEDP\PROJECTEDP\EDP_DATABASE.mdf;Integrated Security=True";
+                string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Database_edp;Integrated Security=False;";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
@@ -117,7 +117,7 @@ namespace projectEDP
                         cmd.Parameters.AddWithValue("@Name", name);
                         cmd.Parameters.AddWithValue("@Email", email);
                         cmd.Parameters.AddWithValue("@Phone", phone);
-                        cmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(DOB));
+                        cmd.Parameters.AddWithValue("@DOB", dtpDOB.Value.Date);
                         cmd.Parameters.AddWithValue("@Gender", gender);
                         cmd.Parameters.AddWithValue("@Username", username);
                         cmd.Parameters.AddWithValue("@Password", password);
@@ -129,6 +129,9 @@ namespace projectEDP
                 }
 
                 MessageBox.Show("You successfully registered. THANK YOU");
+
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();   
                 this.Close();
             }
             catch (Exception ex)
@@ -149,6 +152,11 @@ namespace projectEDP
             loginForm.Show(); 
 
             this.Hide();
+        }
+
+        private void FormSign_Up_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -259,6 +259,7 @@
             this.Controls.Add(this.lblRegister);
             this.Name = "FormSign_Up";
             this.Text = "FormSign_Up";
+            this.Load += new System.EventHandler(this.FormSign_Up_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

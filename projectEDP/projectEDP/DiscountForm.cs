@@ -20,7 +20,7 @@ namespace projectEDP
         private void DiscountForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'eDP_DatabaseDataSet1.Discount' table. You can move, or remove it, as needed.
-            this.discountTableAdapter.Fill(this.eDP_DatabaseDataSet1.Discount);
+            this.discountTableAdapter.Fill(this.eDP_DatabaseDataSet.Discount);
 
         }
 

@@ -41,6 +41,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.bttnBack = new System.Windows.Forms.Button();
+
             ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.discountBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -172,6 +173,7 @@
         private EDP_DatabaseDataSet eDP_DatabaseDataSet;
         private System.Windows.Forms.BindingSource discountBindingSource;
         private EDP_DatabaseDataSetTableAdapters.DiscountTableAdapter discountTableAdapter;
+
         private System.Windows.Forms.Label lblDisName;
         private System.Windows.Forms.Label lblExp;
         private System.Windows.Forms.Label lblDescription;
@@ -181,5 +183,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button bttnBack;
+
     }
 }

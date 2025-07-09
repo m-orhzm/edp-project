@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.eDP_DatabaseDataSet1 = new projectEDP.EDP_DatabaseDataSet1();
+            this.eDP_DatabaseDataSet1 = new projectEDP.DataSet();
             this.discountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.discountTableAdapter = new projectEDP.EDP_DatabaseDataSet1TableAdapters.DiscountTableAdapter();
+            this.discountTableAdapter = new projectEDP.DataSetTableAdapters.DiscountTableAdapter();
             this.lblDisName = new System.Windows.Forms.Label();
             this.lblExp = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -169,9 +169,9 @@
         }
 
         #endregion
-        private EDP_DatabaseDataSet1 eDP_DatabaseDataSet1;
+        private DataSet eDP_DatabaseDataSet1;
         private System.Windows.Forms.BindingSource discountBindingSource;
-        private EDP_DatabaseDataSet1TableAdapters.DiscountTableAdapter discountTableAdapter;
+        private DataSetTableAdapters.DiscountTableAdapter discountTableAdapter;
         private System.Windows.Forms.Label lblDisName;
         private System.Windows.Forms.Label lblExp;
         private System.Windows.Forms.Label lblDescription;

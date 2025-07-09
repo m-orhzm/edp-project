@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.eDP_DatabaseDataSet = new projectEDP.EDP_DatabaseDataSet();
-            this.discountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.discountTableAdapter = new projectEDP.EDP_DatabaseDataSetTableAdapters.DiscountTableAdapter();
+            //this.eDP_DatabaseDataSet = new projectEDP.EDP_DatabaseDataSet();
+            //this.discountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.discountTableAdapter = new projectEDP.EDP_DatabaseDataSetTableAdapters.DiscountTableAdapter();
             this.lblDisName = new System.Windows.Forms.Label();
             this.lblExp = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -41,24 +41,23 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.bttnBack = new System.Windows.Forms.Button();
-
-            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.discountBindingSource)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // eDP_DatabaseDataSet1
-            // 
-            this.eDP_DatabaseDataSet.DataSetName = "EDP_DatabaseDataSet1";
-            this.eDP_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // discountBindingSource
-            // 
-            this.discountBindingSource.DataMember = "Discount";
-            this.discountBindingSource.DataSource = this.eDP_DatabaseDataSet;
-            // 
-            // discountTableAdapter
-            // 
-            this.discountTableAdapter.ClearBeforeFill = true;
+            //((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.discountBindingSource)).BeginInit();
+            //this.SuspendLayout();
+            //// 
+            //// eDP_DatabaseDataSet
+            //// 
+            //this.eDP_DatabaseDataSet.DataSetName = "EDP_DatabaseDataSet1";
+            //this.eDP_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //// 
+            //// discountBindingSource
+            //// 
+            //this.discountBindingSource.DataMember = "Discount";
+            //this.discountBindingSource.DataSource = this.eDP_DatabaseDataSet;
+            //// 
+            //// discountTableAdapter
+            //// 
+            //this.discountTableAdapter.ClearBeforeFill = true;
             // 
             // lblDisName
             // 
@@ -79,7 +78,6 @@
             this.lblExp.Size = new System.Drawing.Size(190, 32);
             this.lblExp.TabIndex = 1;
             this.lblExp.Text = "Expired Date";
-            this.lblExp.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblDescription
             // 
@@ -162,17 +160,19 @@
             this.Name = "DiscountForm";
             this.Text = "DiscountForm";
             this.Load += new System.EventHandler(this.DiscountForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.discountBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.discountBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        //#endregion
+        //private EDP_DatabaseDataSet eDP_DatabaseDataSet;
+        //private System.Windows.Forms.BindingSource discountBindingSource;
+        //private EDP_DatabaseDataSetTableAdapters.DiscountTableAdapter discountTableAdapter;
+
         #endregion
-        private EDP_DatabaseDataSet eDP_DatabaseDataSet;
-        private System.Windows.Forms.BindingSource discountBindingSource;
-        private EDP_DatabaseDataSetTableAdapters.DiscountTableAdapter discountTableAdapter;
 
         private System.Windows.Forms.Label lblDisName;
         private System.Windows.Forms.Label lblExp;
@@ -183,6 +183,5 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button bttnBack;
-
     }
 }

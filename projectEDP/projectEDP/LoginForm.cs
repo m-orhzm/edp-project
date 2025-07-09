@@ -35,7 +35,7 @@ namespace projectEDP
 
             try
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\USER\SOURCE\REPOS\EDP-PROJECT.GIT\PROJECTEDP\PROJECTEDP\EDP_DATABASE.mdf;Integrated Security=True";
+                string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Database_edp;Integrated Security=False;";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {

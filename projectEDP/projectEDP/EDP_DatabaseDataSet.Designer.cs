@@ -840,7 +840,7 @@ namespace projectEDP.EDP_DatabaseDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [Discount] ([Id], [Discount_Name], [Discount_Description], [Expired_Date], [Discount_code]) VALUES (@Id, @Discount_Name, @Discount_Description, @Expired_Date, @Discount_code);
-SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_code FROM Discount WHERE (Id = @Id)";
+SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM Discount WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Discount_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -850,7 +850,7 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_code FROM
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [Discount] SET [Id] = @Id, [Discount_Name] = @Discount_Name, [Discount_Description] = @Discount_Description, [Expired_Date] = @Expired_Date, [Discount_code] = @Discount_code WHERE (([Id] = @Original_Id) AND ([Discount_Name] = @Original_Discount_Name) AND ([Discount_Description] = @Original_Discount_Description) AND ([Expired_Date] = @Original_Expired_Date) AND ([Discount_code] = @Original_Discount_code));
-SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_code FROM Discount WHERE (Id = @Id)";
+SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM Discount WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Discount_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -868,7 +868,7 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_code FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::projectEDP.Properties.Settings.Default.EDP_DatabaseConnectionString;
+            this._connection.ConnectionString = global::projectEDP.Properties.Settings.Default.Database_edpConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

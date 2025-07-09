@@ -79,6 +79,11 @@
     <Compile Include="DiscountForm.Designer.cs">
       <DependentUpon>DiscountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EDP_DatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDP_DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormSign Up.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +157,17 @@
     </None>
     <None Include="DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EDP_DatabaseDataSet.xsc">
+      <DependentUpon>EDP_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EDP_DatabaseDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDP_DatabaseDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="EDP_DatabaseDataSet.xss">
+      <DependentUpon>EDP_DatabaseDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

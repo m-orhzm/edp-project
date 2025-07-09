@@ -104,7 +104,7 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.SystemColors.Control;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(321, 312);
+            this.label27.Location = new System.Drawing.Point(35, 313);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(371, 23);
             this.label27.TabIndex = 54;
@@ -153,7 +153,7 @@
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.SystemColors.Control;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(321, 260);
+            this.label24.Location = new System.Drawing.Point(35, 261);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(112, 23);
             this.label24.TabIndex = 52;
@@ -165,7 +165,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.SystemColors.Control;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(321, 207);
+            this.label23.Location = new System.Drawing.Point(35, 208);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(137, 23);
             this.label23.TabIndex = 50;
@@ -190,7 +190,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(321, 144);
+            this.label22.Location = new System.Drawing.Point(35, 145);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(113, 23);
             this.label22.TabIndex = 48;
@@ -247,11 +247,11 @@
             this.usernameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.usersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(624, 93);
+            this.dataGridView1.Location = new System.Drawing.Point(441, 97);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(769, 444);
+            this.dataGridView1.Size = new System.Drawing.Size(1011, 444);
             this.dataGridView1.TabIndex = 64;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

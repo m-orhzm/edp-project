@@ -109,6 +109,7 @@
             this.label27.Size = new System.Drawing.Size(371, 23);
             this.label27.TabIndex = 54;
             this.label27.Text = "Search (Booking ID, Cust. Name or Destination)";
+
             // 
             // label1
             // 

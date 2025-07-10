@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHistory));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.clrFilterBtn = new System.Windows.Forms.Button();
+            this.applyFilterBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,15 +41,15 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.discountName = new System.Windows.Forms.ComboBox();
+            this.discountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eDP_DatabaseDataSet1 = new projectEDP.EDP_DatabaseDataSet1();
             this.label22 = new System.Windows.Forms.Label();
             this.pkgName = new System.Windows.Forms.ComboBox();
+            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eDP_DatabaseDataSet2 = new projectEDP.EDP_DatabaseDataSet2();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button8 = new System.Windows.Forms.Button();
-            this.eDP_DatabaseDataSet = new projectEDP.EDP_DatabaseDataSet();
-            this.historyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.historyTableAdapter = new projectEDP.EDP_DatabaseDataSetTableAdapters.HistoryTableAdapter();
             this.historyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pkgidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,43 +58,45 @@
             this.discountNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pkgnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eDP_DatabaseDataSet1 = new projectEDP.EDP_DatabaseDataSet1();
-            this.discountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.historyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eDP_DatabaseDataSet = new projectEDP.EDP_DatabaseDataSet();
+            this.button8 = new System.Windows.Forms.Button();
+            this.historyTableAdapter = new projectEDP.EDP_DatabaseDataSetTableAdapters.HistoryTableAdapter();
             this.discountTableAdapter = new projectEDP.EDP_DatabaseDataSet1TableAdapters.DiscountTableAdapter();
-            this.eDP_DatabaseDataSet2 = new projectEDP.EDP_DatabaseDataSet2();
-            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.packageTableAdapter = new projectEDP.EDP_DatabaseDataSet2TableAdapters.PackageTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.discountBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // clrFilterBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(210, 395);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 57);
-            this.button2.TabIndex = 56;
-            this.button2.Text = "Clear Filters";
-            this.button2.UseVisualStyleBackColor = true;
+            this.clrFilterBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clrFilterBtn.Location = new System.Drawing.Point(210, 395);
+            this.clrFilterBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clrFilterBtn.Name = "clrFilterBtn";
+            this.clrFilterBtn.Size = new System.Drawing.Size(176, 57);
+            this.clrFilterBtn.TabIndex = 56;
+            this.clrFilterBtn.Text = "Clear Filters";
+            this.clrFilterBtn.UseVisualStyleBackColor = true;
+            this.clrFilterBtn.Click += new System.EventHandler(this.clrFilterBtn_Click);
             // 
-            // button1
+            // applyFilterBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(213, 334);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 57);
-            this.button1.TabIndex = 55;
-            this.button1.Text = "Apply Filters";
-            this.button1.UseVisualStyleBackColor = true;
+            this.applyFilterBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applyFilterBtn.Location = new System.Drawing.Point(213, 334);
+            this.applyFilterBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.applyFilterBtn.Name = "applyFilterBtn";
+            this.applyFilterBtn.Size = new System.Drawing.Size(176, 57);
+            this.applyFilterBtn.TabIndex = 55;
+            this.applyFilterBtn.Text = "Apply Filters";
+            this.applyFilterBtn.UseVisualStyleBackColor = true;
+            this.applyFilterBtn.Click += new System.EventHandler(this.applyFilterBtn_Click);
             // 
             // pictureBox1
             // 
@@ -193,6 +195,17 @@
             this.discountName.Name = "discountName";
             this.discountName.Size = new System.Drawing.Size(364, 24);
             this.discountName.TabIndex = 49;
+            this.discountName.SelectedIndexChanged += new System.EventHandler(this.discountName_SelectedIndexChanged);
+            // 
+            // discountBindingSource
+            // 
+            this.discountBindingSource.DataMember = "Discount";
+            this.discountBindingSource.DataSource = this.eDP_DatabaseDataSet1;
+            // 
+            // eDP_DatabaseDataSet1
+            // 
+            this.eDP_DatabaseDataSet1.DataSetName = "EDP_DatabaseDataSet1";
+            this.eDP_DatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label22
             // 
@@ -215,6 +228,16 @@
             this.pkgName.Name = "pkgName";
             this.pkgName.Size = new System.Drawing.Size(364, 24);
             this.pkgName.TabIndex = 51;
+            // 
+            // packageBindingSource
+            // 
+            this.packageBindingSource.DataMember = "Package";
+            this.packageBindingSource.DataSource = this.eDP_DatabaseDataSet2;
+            // 
+            // eDP_DatabaseDataSet2
+            // 
+            this.eDP_DatabaseDataSet2.DataSetName = "EDP_DatabaseDataSet2";
+            this.eDP_DatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button7
             // 
@@ -260,31 +283,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1064, 444);
             this.dataGridView1.TabIndex = 64;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(499, 49);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(136, 39);
-            this.button8.TabIndex = 65;
-            this.button8.Text = "DISCOUNT";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // eDP_DatabaseDataSet
-            // 
-            this.eDP_DatabaseDataSet.DataSetName = "EDP_DatabaseDataSet";
-            this.eDP_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // historyBindingSource
-            // 
-            this.historyBindingSource.DataMember = "History";
-            this.historyBindingSource.DataSource = this.eDP_DatabaseDataSet;
-            // 
-            // historyTableAdapter
-            // 
-            this.historyTableAdapter.ClearBeforeFill = true;
             // 
             // historyidDataGridViewTextBoxColumn
             // 
@@ -350,29 +348,34 @@
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // eDP_DatabaseDataSet1
+            // historyBindingSource
             // 
-            this.eDP_DatabaseDataSet1.DataSetName = "EDP_DatabaseDataSet1";
-            this.eDP_DatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.historyBindingSource.DataMember = "History";
+            this.historyBindingSource.DataSource = this.eDP_DatabaseDataSet;
             // 
-            // discountBindingSource
+            // eDP_DatabaseDataSet
             // 
-            this.discountBindingSource.DataMember = "Discount";
-            this.discountBindingSource.DataSource = this.eDP_DatabaseDataSet1;
+            this.eDP_DatabaseDataSet.DataSetName = "EDP_DatabaseDataSet";
+            this.eDP_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(499, 49);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(136, 39);
+            this.button8.TabIndex = 65;
+            this.button8.Text = "DISCOUNT";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // historyTableAdapter
+            // 
+            this.historyTableAdapter.ClearBeforeFill = true;
             // 
             // discountTableAdapter
             // 
             this.discountTableAdapter.ClearBeforeFill = true;
-            // 
-            // eDP_DatabaseDataSet2
-            // 
-            this.eDP_DatabaseDataSet2.DataSetName = "EDP_DatabaseDataSet2";
-            this.eDP_DatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // packageBindingSource
-            // 
-            this.packageBindingSource.DataMember = "Package";
-            this.packageBindingSource.DataSource = this.eDP_DatabaseDataSet2;
             // 
             // packageTableAdapter
             // 
@@ -387,8 +390,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.clrFilterBtn);
+            this.Controls.Add(this.applyFilterBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label1);
@@ -404,21 +407,21 @@
             this.Text = "AdminHistory";
             this.Load += new System.EventHandler(this.AdminHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.discountBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDP_DatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button clrFilterBtn;
+        private System.Windows.Forms.Button applyFilterBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label1;

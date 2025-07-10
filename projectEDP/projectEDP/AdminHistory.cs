@@ -122,5 +122,23 @@ namespace projectEDP
         {
 
         }
+
+        private void discountName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void applyFilterBtn_Click(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void clrFilterBtn_Click(object sender, EventArgs e)
+        {
+            discountName.SelectedIndex = -1;
+            pkgName.SelectedIndex = -1;
+            userName.Clear();
+            dateFilter.Checked = false; // If you use it
+        }
     }
 }

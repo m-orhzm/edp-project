@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDP_DatabaseDataSet2" targetNamespace="http://tempuri.org/EDP_DatabaseDataSet2.xsd" xmlns:mstns="http://tempuri.org/EDP_DatabaseDataSet2.xsd" xmlns="http://tempuri.org/EDP_DatabaseDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EDP_DatabaseConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EDP_DatabaseConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.projectEDP.Properties.Settings.GlobalReference.Default.EDP_DatabaseConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PackageTableAdapter" GeneratorDataComponentClassName="PackageTableAdapter" Name="Package" UserDataComponentName="PackageTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EDP_DatabaseConnectionString1 (Settings)" DbObjectName="dbo.Package" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT pkg_name FROM dbo.Package</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="pkg_name" DataSetColumn="pkg_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDP_DatabaseDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="EDP_DatabaseDataSet2" msprop:Generator_DataSetName="EDP_DatabaseDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Package" msprop:Generator_RowEvHandlerName="PackageRowChangeEventHandler" msprop:Generator_RowDeletedName="PackageRowDeleted" msprop:Generator_RowDeletingName="PackageRowDeleting" msprop:Generator_RowEvArgName="PackageRowChangeEvent" msprop:Generator_TablePropName="Package" msprop:Generator_RowChangedName="PackageRowChanged" msprop:Generator_RowChangingName="PackageRowChanging" msprop:Generator_TableClassName="PackageDataTable" msprop:Generator_RowClassName="PackageRow" msprop:Generator_TableVarName="tablePackage" msprop:Generator_UserTableName="Package">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pkg_name" msprop:Generator_ColumnPropNameInRow="pkg_name" msprop:Generator_ColumnPropNameInTable="pkg_nameColumn" msprop:Generator_ColumnVarNameInTable="columnpkg_name" msprop:Generator_UserColumnName="pkg_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

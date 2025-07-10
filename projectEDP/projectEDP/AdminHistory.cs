@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,10 +75,50 @@ namespace projectEDP
         {
             cmd.Parameters.AddWithValue("@Username", "%" + userName.Text + "%");
         }
-            
+
+        if (dateFilter.Checked)
+        {
+            cmd.Parameters.AddWithValue("@BookingDate", dateFilter.Value.Date);
         }
 
+        DataTable dt = new DataTable();
+        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        adapter.Fill(dt);
+        dataGridView1.DataSource = dt;
+    }
+}
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
         {
 
         }

@@ -24,7 +24,7 @@ namespace projectEDP {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class EDP_DatabaseDataSet : global::System.Data.DataSet {
         
-        private DiscountDataTable tableDiscount;
+        private HistoryDataTable tableHistory;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace projectEDP {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Discount"] != null)) {
-                    base.Tables.Add(new DiscountDataTable(ds.Tables["Discount"]));
+                if ((ds.Tables["History"] != null)) {
+                    base.Tables.Add(new HistoryDataTable(ds.Tables["History"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace projectEDP {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DiscountDataTable Discount {
+        public HistoryDataTable History {
             get {
-                return this.tableDiscount;
+                return this.tableHistory;
             }
         }
         
@@ -152,8 +152,8 @@ namespace projectEDP {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Discount"] != null)) {
-                    base.Tables.Add(new DiscountDataTable(ds.Tables["Discount"]));
+                if ((ds.Tables["History"] != null)) {
+                    base.Tables.Add(new HistoryDataTable(ds.Tables["History"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace projectEDP {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDiscount = ((DiscountDataTable)(base.Tables["Discount"]));
+            this.tableHistory = ((HistoryDataTable)(base.Tables["History"]));
             if ((initTable == true)) {
-                if ((this.tableDiscount != null)) {
-                    this.tableDiscount.InitVars();
+                if ((this.tableHistory != null)) {
+                    this.tableHistory.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace projectEDP {
             this.Namespace = "http://tempuri.org/EDP_DatabaseDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDiscount = new DiscountDataTable();
-            base.Tables.Add(this.tableDiscount);
+            this.tableHistory = new HistoryDataTable();
+            base.Tables.Add(this.tableHistory);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeDiscount() {
+        private bool ShouldSerializeHistory() {
             return false;
         }
         
@@ -270,29 +270,35 @@ namespace projectEDP {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void DiscountRowChangeEventHandler(object sender, DiscountRowChangeEvent e);
+        public delegate void HistoryRowChangeEventHandler(object sender, HistoryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DiscountDataTable : global::System.Data.TypedTableBase<DiscountRow> {
+        public partial class HistoryDataTable : global::System.Data.TypedTableBase<HistoryRow> {
             
-            private global::System.Data.DataColumn columnId;
+            private global::System.Data.DataColumn columnhistory_id;
+            
+            private global::System.Data.DataColumn columnuser_id;
+            
+            private global::System.Data.DataColumn columnpkg_id;
+            
+            private global::System.Data.DataColumn columnDiscount_id;
+            
+            private global::System.Data.DataColumn columndate;
             
             private global::System.Data.DataColumn columnDiscount_Name;
             
-            private global::System.Data.DataColumn columnDiscount_Description;
+            private global::System.Data.DataColumn columnpkg_name;
             
-            private global::System.Data.DataColumn columnExpired_Date;
-            
-            private global::System.Data.DataColumn columnDiscount_code;
+            private global::System.Data.DataColumn columnName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiscountDataTable() {
-                this.TableName = "Discount";
+            public HistoryDataTable() {
+                this.TableName = "History";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +306,7 @@ namespace projectEDP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DiscountDataTable(global::System.Data.DataTable table) {
+            internal HistoryDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,16 +323,48 @@ namespace projectEDP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected DiscountDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected HistoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
+            public global::System.Data.DataColumn history_idColumn {
                 get {
-                    return this.columnId;
+                    return this.columnhistory_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn user_idColumn {
+                get {
+                    return this.columnuser_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pkg_idColumn {
+                get {
+                    return this.columnpkg_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Discount_idColumn {
+                get {
+                    return this.columnDiscount_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn dateColumn {
+                get {
+                    return this.columndate;
                 }
             }
             
@@ -340,25 +378,17 @@ namespace projectEDP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Discount_DescriptionColumn {
+            public global::System.Data.DataColumn pkg_nameColumn {
                 get {
-                    return this.columnDiscount_Description;
+                    return this.columnpkg_name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Expired_DateColumn {
+            public global::System.Data.DataColumn NameColumn {
                 get {
-                    return this.columnExpired_Date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Discount_codeColumn {
-                get {
-                    return this.columnDiscount_code;
+                    return this.columnName;
                 }
             }
             
@@ -373,56 +403,59 @@ namespace projectEDP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiscountRow this[int index] {
+            public HistoryRow this[int index] {
                 get {
-                    return ((DiscountRow)(this.Rows[index]));
+                    return ((HistoryRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DiscountRowChangeEventHandler DiscountRowChanging;
+            public event HistoryRowChangeEventHandler HistoryRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DiscountRowChangeEventHandler DiscountRowChanged;
+            public event HistoryRowChangeEventHandler HistoryRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DiscountRowChangeEventHandler DiscountRowDeleting;
+            public event HistoryRowChangeEventHandler HistoryRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DiscountRowChangeEventHandler DiscountRowDeleted;
+            public event HistoryRowChangeEventHandler HistoryRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddDiscountRow(DiscountRow row) {
+            public void AddHistoryRow(HistoryRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiscountRow AddDiscountRow(int Id, string Discount_Name, string Discount_Description, System.DateTime Expired_Date, string Discount_code) {
-                DiscountRow rowDiscountRow = ((DiscountRow)(this.NewRow()));
+            public HistoryRow AddHistoryRow(int history_id, int user_id, int pkg_id, int Discount_id, System.DateTime date, string Discount_Name, string pkg_name, string Name) {
+                HistoryRow rowHistoryRow = ((HistoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        history_id,
+                        user_id,
+                        pkg_id,
+                        Discount_id,
+                        date,
                         Discount_Name,
-                        Discount_Description,
-                        Expired_Date,
-                        Discount_code};
-                rowDiscountRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDiscountRow);
-                return rowDiscountRow;
+                        pkg_name,
+                        Name};
+                rowHistoryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHistoryRow);
+                return rowHistoryRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiscountRow FindById(int Id) {
-                return ((DiscountRow)(this.Rows.Find(new object[] {
-                            Id})));
+            public HistoryRow FindByhistory_id(int history_id) {
+                return ((HistoryRow)(this.Rows.Find(new object[] {
+                            history_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DiscountDataTable cln = ((DiscountDataTable)(base.Clone()));
+                HistoryDataTable cln = ((HistoryDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -430,69 +463,80 @@ namespace projectEDP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DiscountDataTable();
+                return new HistoryDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnId = base.Columns["Id"];
+                this.columnhistory_id = base.Columns["history_id"];
+                this.columnuser_id = base.Columns["user_id"];
+                this.columnpkg_id = base.Columns["pkg_id"];
+                this.columnDiscount_id = base.Columns["Discount_id"];
+                this.columndate = base.Columns["date"];
                 this.columnDiscount_Name = base.Columns["Discount_Name"];
-                this.columnDiscount_Description = base.Columns["Discount_Description"];
-                this.columnExpired_Date = base.Columns["Expired_Date"];
-                this.columnDiscount_code = base.Columns["Discount_code"];
+                this.columnpkg_name = base.Columns["pkg_name"];
+                this.columnName = base.Columns["Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
+                this.columnhistory_id = new global::System.Data.DataColumn("history_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhistory_id);
+                this.columnuser_id = new global::System.Data.DataColumn("user_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_id);
+                this.columnpkg_id = new global::System.Data.DataColumn("pkg_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpkg_id);
+                this.columnDiscount_id = new global::System.Data.DataColumn("Discount_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDiscount_id);
+                this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate);
                 this.columnDiscount_Name = new global::System.Data.DataColumn("Discount_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDiscount_Name);
-                this.columnDiscount_Description = new global::System.Data.DataColumn("Discount_Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDiscount_Description);
-                this.columnExpired_Date = new global::System.Data.DataColumn("Expired_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpired_Date);
-                this.columnDiscount_code = new global::System.Data.DataColumn("Discount_code", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDiscount_code);
+                this.columnpkg_name = new global::System.Data.DataColumn("pkg_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpkg_name);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId}, true));
-                this.columnId.AllowDBNull = false;
-                this.columnId.Unique = true;
+                                this.columnhistory_id}, true));
+                this.columnhistory_id.AllowDBNull = false;
+                this.columnhistory_id.Unique = true;
+                this.columnuser_id.AllowDBNull = false;
+                this.columnpkg_id.AllowDBNull = false;
+                this.columnDiscount_id.AllowDBNull = false;
                 this.columnDiscount_Name.AllowDBNull = false;
                 this.columnDiscount_Name.MaxLength = 20;
-                this.columnDiscount_Description.AllowDBNull = false;
-                this.columnDiscount_Description.MaxLength = 255;
-                this.columnExpired_Date.AllowDBNull = false;
-                this.columnDiscount_code.AllowDBNull = false;
-                this.columnDiscount_code.MaxLength = 5;
+                this.columnpkg_name.AllowDBNull = false;
+                this.columnpkg_name.MaxLength = 50;
+                this.columnName.AllowDBNull = false;
+                this.columnName.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiscountRow NewDiscountRow() {
-                return ((DiscountRow)(this.NewRow()));
+            public HistoryRow NewHistoryRow() {
+                return ((HistoryRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DiscountRow(builder);
+                return new HistoryRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DiscountRow);
+                return typeof(HistoryRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DiscountRowChanged != null)) {
-                    this.DiscountRowChanged(this, new DiscountRowChangeEvent(((DiscountRow)(e.Row)), e.Action));
+                if ((this.HistoryRowChanged != null)) {
+                    this.HistoryRowChanged(this, new HistoryRowChangeEvent(((HistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -500,8 +544,8 @@ namespace projectEDP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DiscountRowChanging != null)) {
-                    this.DiscountRowChanging(this, new DiscountRowChangeEvent(((DiscountRow)(e.Row)), e.Action));
+                if ((this.HistoryRowChanging != null)) {
+                    this.HistoryRowChanging(this, new HistoryRowChangeEvent(((HistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -509,8 +553,8 @@ namespace projectEDP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DiscountRowDeleted != null)) {
-                    this.DiscountRowDeleted(this, new DiscountRowChangeEvent(((DiscountRow)(e.Row)), e.Action));
+                if ((this.HistoryRowDeleted != null)) {
+                    this.HistoryRowDeleted(this, new HistoryRowChangeEvent(((HistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -518,14 +562,14 @@ namespace projectEDP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DiscountRowDeleting != null)) {
-                    this.DiscountRowDeleting(this, new DiscountRowChangeEvent(((DiscountRow)(e.Row)), e.Action));
+                if ((this.HistoryRowDeleting != null)) {
+                    this.HistoryRowDeleting(this, new HistoryRowChangeEvent(((HistoryRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveDiscountRow(DiscountRow row) {
+            public void RemoveHistoryRow(HistoryRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -552,7 +596,7 @@ namespace projectEDP {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DiscountDataTable";
+                attribute2.FixedValue = "HistoryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -596,25 +640,74 @@ namespace projectEDP {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DiscountRow : global::System.Data.DataRow {
+        public partial class HistoryRow : global::System.Data.DataRow {
             
-            private DiscountDataTable tableDiscount;
+            private HistoryDataTable tableHistory;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DiscountRow(global::System.Data.DataRowBuilder rb) : 
+            internal HistoryRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDiscount = ((DiscountDataTable)(this.Table));
+                this.tableHistory = ((HistoryDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id {
+            public int history_id {
                 get {
-                    return ((int)(this[this.tableDiscount.IdColumn]));
+                    return ((int)(this[this.tableHistory.history_idColumn]));
                 }
                 set {
-                    this[this.tableDiscount.IdColumn] = value;
+                    this[this.tableHistory.history_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int user_id {
+                get {
+                    return ((int)(this[this.tableHistory.user_idColumn]));
+                }
+                set {
+                    this[this.tableHistory.user_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int pkg_id {
+                get {
+                    return ((int)(this[this.tableHistory.pkg_idColumn]));
+                }
+                set {
+                    this[this.tableHistory.pkg_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Discount_id {
+                get {
+                    return ((int)(this[this.tableHistory.Discount_idColumn]));
+                }
+                set {
+                    this[this.tableHistory.Discount_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableHistory.dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date\' in table \'History\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistory.dateColumn] = value;
                 }
             }
             
@@ -622,44 +715,45 @@ namespace projectEDP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Discount_Name {
                 get {
-                    return ((string)(this[this.tableDiscount.Discount_NameColumn]));
+                    return ((string)(this[this.tableHistory.Discount_NameColumn]));
                 }
                 set {
-                    this[this.tableDiscount.Discount_NameColumn] = value;
+                    this[this.tableHistory.Discount_NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Discount_Description {
+            public string pkg_name {
                 get {
-                    return ((string)(this[this.tableDiscount.Discount_DescriptionColumn]));
+                    return ((string)(this[this.tableHistory.pkg_nameColumn]));
                 }
                 set {
-                    this[this.tableDiscount.Discount_DescriptionColumn] = value;
+                    this[this.tableHistory.pkg_nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Expired_Date {
+            public string Name {
                 get {
-                    return ((global::System.DateTime)(this[this.tableDiscount.Expired_DateColumn]));
+                    return ((string)(this[this.tableHistory.NameColumn]));
                 }
                 set {
-                    this[this.tableDiscount.Expired_DateColumn] = value;
+                    this[this.tableHistory.NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Discount_code {
-                get {
-                    return ((string)(this[this.tableDiscount.Discount_codeColumn]));
-                }
-                set {
-                    this[this.tableDiscount.Discount_codeColumn] = value;
-                }
+            public bool IsdateNull() {
+                return this.IsNull(this.tableHistory.dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetdateNull() {
+                this[this.tableHistory.dateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -667,22 +761,22 @@ namespace projectEDP {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class DiscountRowChangeEvent : global::System.EventArgs {
+        public class HistoryRowChangeEvent : global::System.EventArgs {
             
-            private DiscountRow eventRow;
+            private HistoryRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiscountRowChangeEvent(DiscountRow row, global::System.Data.DataRowAction action) {
+            public HistoryRowChangeEvent(HistoryRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiscountRow Row {
+            public HistoryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -710,7 +804,7 @@ namespace projectEDP.EDP_DatabaseDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DiscountTableAdapter : global::System.ComponentModel.Component {
+    public partial class HistoryTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -724,7 +818,7 @@ namespace projectEDP.EDP_DatabaseDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DiscountTableAdapter() {
+        public HistoryTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -821,72 +915,68 @@ namespace projectEDP.EDP_DatabaseDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Discount";
-            tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.DataSetTable = "History";
+            tableMapping.ColumnMappings.Add("history_id", "history_id");
+            tableMapping.ColumnMappings.Add("user_id", "user_id");
+            tableMapping.ColumnMappings.Add("pkg_id", "pkg_id");
+            tableMapping.ColumnMappings.Add("Discount_id", "Discount_id");
+            tableMapping.ColumnMappings.Add("date", "date");
             tableMapping.ColumnMappings.Add("Discount_Name", "Discount_Name");
-            tableMapping.ColumnMappings.Add("Discount_Description", "Discount_Description");
-            tableMapping.ColumnMappings.Add("Expired_Date", "Expired_Date");
-            tableMapping.ColumnMappings.Add("Discount_code", "Discount_code");
+            tableMapping.ColumnMappings.Add("pkg_name", "pkg_name");
+            tableMapping.ColumnMappings.Add("Name", "Name");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Discount] WHERE (([Id] = @Original_Id) AND ([Discount_Name] = @Original_Discount_Name) AND ([Discount_Description] = @Original_Discount_Description) AND ([Expired_Date] = @Original_Expired_Date) AND ([Discount_code] = @Original_Discount_code))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Discount_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Discount_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Expired_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expired_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Discount_code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Discount] ([Id], [Discount_Name], [Discount_Description], [Expired_Date], [Discount_code]) VALUES (@Id, @Discount_Name, @Discount_Description, @Expired_Date, @Discount_code);
-SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM Discount WHERE (Id = @Id)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Discount_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Discount_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expired_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expired_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Discount_code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Discount] SET [Id] = @Id, [Discount_Name] = @Discount_Name, [Discount_Description] = @Discount_Description, [Expired_Date] = @Expired_Date, [Discount_code] = @Discount_code WHERE (([Id] = @Original_Id) AND ([Discount_Name] = @Original_Discount_Name) AND ([Discount_Description] = @Original_Discount_Description) AND ([Expired_Date] = @Original_Expired_Date) AND ([Discount_code] = @Original_Discount_code));
-SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM Discount WHERE (Id = @Id)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Discount_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Discount_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expired_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expired_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Discount_code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Discount_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Discount_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Expired_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expired_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Discount_code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Discount_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::projectEDP.Properties.Settings.Default.Database_edpConnectionString;
+            this._connection.ConnectionString = global::projectEDP.Properties.Settings.Default.EDP_DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_code\r\nFROM" +
-                "     Discount";
+            this._commandCollection[0].CommandText = @"SELECT UserHistory.*, Discount.Discount_Name, Package.pkg_name, Users.Name
+FROM     Discount INNER JOIN
+                  UserHistory ON Discount.Discount_Id = UserHistory.Discount_id INNER JOIN
+                  Package ON UserHistory.pkg_id = Package.pkg_Id INNER JOIN
+                  Users ON UserHistory.user_id = Users.User_Id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT UserHistory.*, Discount.Discount_Name, Package.pkg_name, Users.Name
+FROM     Discount INNER JOIN
+                  UserHistory ON Discount.Discount_Id = UserHistory.Discount_id INNER JOIN
+                  Package ON UserHistory.pkg_id = Package.pkg_Id INNER JOIN
+                  Users ON UserHistory.user_id = Users.User_Id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT UserHistory.history_id, UserHistory.user_id, UserHistory.pkg_id, UserHistory.Discount_id, UserHistory.date, Discount.Discount_Name, Package.pkg_name, Users.Name
+FROM     Discount INNER JOIN
+                  UserHistory ON Discount.Discount_Id = UserHistory.Discount_id INNER JOIN
+                  Package ON UserHistory.pkg_id = Package.pkg_Id INNER JOIN
+                  Users ON UserHistory.user_id = Users.User_Id";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT UserHistory.*, Discount.Discount_Name, Package.pkg_name, Users.Name
+FROM     Discount INNER JOIN
+                  UserHistory ON Discount.Discount_Id = UserHistory.Discount_id INNER JOIN
+                  Package ON UserHistory.pkg_id = Package.pkg_Id INNER JOIN
+                  Users ON UserHistory.user_id = Users.User_Id";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(EDP_DatabaseDataSet.DiscountDataTable dataTable) {
+        public virtual int Fill(EDP_DatabaseDataSet.HistoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -899,9 +989,9 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual EDP_DatabaseDataSet.DiscountDataTable GetData() {
+        public virtual EDP_DatabaseDataSet.HistoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            EDP_DatabaseDataSet.DiscountDataTable dataTable = new EDP_DatabaseDataSet.DiscountDataTable();
+            EDP_DatabaseDataSet.HistoryDataTable dataTable = new EDP_DatabaseDataSet.HistoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -909,181 +999,40 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(EDP_DatabaseDataSet.DiscountDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(EDP_DatabaseDataSet.HistoryDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(EDP_DatabaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Discount");
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(EDP_DatabaseDataSet.HistoryDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Discount_Name, string Original_Discount_Description, System.DateTime Original_Expired_Date, string Original_Discount_code) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_Discount_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_Discount_Name");
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(EDP_DatabaseDataSet.HistoryDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Discount_Name));
-            }
-            if ((Original_Discount_Description == null)) {
-                throw new global::System.ArgumentNullException("Original_Discount_Description");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Discount_Description));
-            }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Expired_Date));
-            if ((Original_Discount_code == null)) {
-                throw new global::System.ArgumentNullException("Original_Discount_code");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Discount_code));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, string Discount_Name, string Discount_Description, System.DateTime Expired_Date, string Discount_code) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
-            if ((Discount_Name == null)) {
-                throw new global::System.ArgumentNullException("Discount_Name");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Discount_Name));
-            }
-            if ((Discount_Description == null)) {
-                throw new global::System.ArgumentNullException("Discount_Description");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Discount_Description));
-            }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Expired_Date));
-            if ((Discount_code == null)) {
-                throw new global::System.ArgumentNullException("Discount_code");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Discount_code));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id, string Discount_Name, string Discount_Description, System.DateTime Expired_Date, string Discount_code, int Original_Id, string Original_Discount_Name, string Original_Discount_Description, System.DateTime Original_Expired_Date, string Original_Discount_code) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
-            if ((Discount_Name == null)) {
-                throw new global::System.ArgumentNullException("Discount_Name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Discount_Name));
-            }
-            if ((Discount_Description == null)) {
-                throw new global::System.ArgumentNullException("Discount_Description");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Discount_Description));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Expired_Date));
-            if ((Discount_code == null)) {
-                throw new global::System.ArgumentNullException("Discount_code");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Discount_code));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
-            if ((Original_Discount_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_Discount_Name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Discount_Name));
-            }
-            if ((Original_Discount_Description == null)) {
-                throw new global::System.ArgumentNullException("Original_Discount_Description");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Discount_Description));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_Expired_Date));
-            if ((Original_Discount_code == null)) {
-                throw new global::System.ArgumentNullException("Original_Discount_code");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Discount_code));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Discount_Name, string Discount_Description, System.DateTime Expired_Date, string Discount_code, int Original_Id, string Original_Discount_Name, string Original_Discount_Description, System.DateTime Original_Expired_Date, string Original_Discount_code) {
-            return this.Update(Original_Id, Discount_Name, Discount_Description, Expired_Date, Discount_code, Original_Id, Original_Discount_Name, Original_Discount_Description, Original_Expired_Date, Original_Discount_code);
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     
@@ -1099,8 +1048,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
         
         private UpdateOrderOption _updateOrder;
         
-        private DiscountTableAdapter _discountTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1113,20 +1060,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public DiscountTableAdapter DiscountTableAdapter {
-            get {
-                return this._discountTableAdapter;
-            }
-            set {
-                this._discountTableAdapter = value;
             }
         }
         
@@ -1149,10 +1082,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._discountTableAdapter != null) 
-                            && (this._discountTableAdapter.Connection != null))) {
-                    return this._discountTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1166,9 +1095,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._discountTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1180,15 +1106,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(EDP_DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._discountTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Discount.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._discountTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1199,14 +1116,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(EDP_DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._discountTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Discount.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._discountTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1217,14 +1126,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(EDP_DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._discountTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Discount.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._discountTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1264,11 +1165,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._discountTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._discountTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -1301,15 +1197,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._discountTableAdapter != null)) {
-                    revertConnections.Add(this._discountTableAdapter, this._discountTableAdapter.Connection);
-                    this._discountTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._discountTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._discountTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._discountTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._discountTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1367,10 +1254,6 @@ SELECT Id, Discount_Name, Discount_Description, Expired_Date, Discount_Code FROM
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._discountTableAdapter != null)) {
-                    this._discountTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._discountTableAdapter]));
-                    this._discountTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

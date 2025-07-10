@@ -89,10 +89,23 @@
     <Compile Include="DiscountForm.Designer.cs">
       <DependentUpon>DiscountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EDP_DatabaseDataSet.cs">
+      <DependentUpon>EDP_DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EDP_DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EDP_DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EDP_DatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDP_DatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EDP_DatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDP_DatabaseDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormSign Up.cs">
       <SubType>Form</SubType>
@@ -181,6 +194,28 @@
     </None>
     <None Include="EDP_DatabaseDataSet.xss">
       <DependentUpon>EDP_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EDP_DatabaseDataSet1.xsc">
+      <DependentUpon>EDP_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EDP_DatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDP_DatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDP_DatabaseDataSet1.xss">
+      <DependentUpon>EDP_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EDP_DatabaseDataSet2.xsc">
+      <DependentUpon>EDP_DatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="EDP_DatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDP_DatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDP_DatabaseDataSet2.xss">
+      <DependentUpon>EDP_DatabaseDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -3,8 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-*.mdf
-*.ldf
+#*.mdf
+#*.ldf
 						
 # User-specific files
 *.rsuser
@@ -266,7 +266,7 @@ ServiceFabricBackup/
 
 # SQL Server files
 *.ldf
-*.ndf
+#*.ndf
 
 # Business Intelligence projects
 *.rdl.data
@@ -363,3 +363,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+#/projectEDP/projectEDP/EDP_Database.mdf
